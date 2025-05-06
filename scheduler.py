@@ -31,12 +31,12 @@ def send_morning_messages():
         channel_id = None
         channels = client.conversations_list(types="public_channel")["channels"]
         for ch in channels:
-            if ch["name"] == "well-being":
+            if ch["name"] == "[channel-name]":
                 channel_id = ch["id"]
                 break
 
         if not channel_id:
-            print("❌ Channel 'well-being' not found.")
+            print("❌ Channel not found.")
             return
 
         # ✅ Post poll message to the channel
