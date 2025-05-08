@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: slack-scheduler-bot
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      gunicorn app:flask_app
+    envVars:
+      - key: SLACK_BOT_TOKEN
+        sync: false
+      - key: SLACK_SIGNING_SECRET
+        sync: false
+      - key: GSHEET_ID
+        sync: false
+      - key: GOOGLE_APPLICATION_CREDENTIALS_JSON
+        sync: false
