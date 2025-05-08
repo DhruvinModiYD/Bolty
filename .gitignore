@@ -1,4 +1,6 @@
 .env
+gcred.json
+ngrok
 __pycache__/
 *.pyc
-gcred.json
+Slack_bot_logs.xlsx
